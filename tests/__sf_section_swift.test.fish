@@ -2,7 +2,7 @@ source $DIRNAME/spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
-	mock swift --version 0 "echo \"Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)\""
+	mock swiftenv version 0 "echo \"4.2.1 (set by /Users/ryan/.swiftenv/version)\""
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end
@@ -18,8 +18,8 @@ test "Prints section when swift package is present"
 		set_color --bold
 		echo -n "via "
 		set_color normal
-		set_color --bold cyan
-		echo -n "🦜 4.2.1"
+		set_color --bold yellow
+		echo -n "🐦 4.2.1"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -39,7 +39,7 @@ test "Changing SPACEFISH_SWIFT_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n "via "
 		set_color normal
-		set_color --bold cyan
+		set_color --bold yellow
 		echo -n "· 4.2.1"
 		set_color normal
 		set_color --bold
@@ -57,8 +57,8 @@ test "Changing SPACEFISH_SWIFT_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-		set_color --bold cyan
-		echo -n "🦜 4.2.1"
+		set_color --bold yellow
+		echo -n "🐦 4.2.1"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -75,8 +75,8 @@ test "Changing SPACEFISH_SWIFT_SUFFIX changes the character suffix"
 		set_color --bold
 		echo -n "via "
 		set_color normal
-		set_color --bold cyan
-		echo -n "🦜 4.2.1"
+		set_color --bold yellow
+		echo -n "🐦 4.2.1"
 		set_color normal
 		set_color --bold
 		echo -n "·"
